@@ -26,14 +26,14 @@ export default function SmartHomeSection() {
         </div>
 
         {/* Interactive Showcase Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
-          {/* Left Column: Sticky Hardware Display */}
-          <div className="lg:col-span-6 lg:sticky lg:top-28">
-            <div className="relative rounded-3xl overflow-hidden bg-white p-6 text-[#0E284A] shadow-xl border border-slate-200 flex flex-col justify-between">
+          {/* Left Column: Hardware Display */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <div className="relative rounded-3xl overflow-hidden bg-white p-5 md:p-6 text-[#0E284A] shadow-xl border border-slate-200 flex flex-col justify-between">
               
-              {/* Dynamic Media Display (Consistent fixed-height frame for all videos) */}
-              <div className="relative w-full h-[440px] rounded-2xl overflow-hidden bg-slate-900 border border-slate-100 flex items-center justify-center p-0 shadow-inner">
+              {/* Dynamic Media Display (5:4 / 4:5 portrait frame) */}
+              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950 border border-slate-100 flex items-center justify-center p-0 shadow-inner">
                 {activeTab === "routines" && (
                   <video
                     key="routines-vid"
@@ -42,7 +42,7 @@ export default function SmartHomeSection() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover animate-in fade-in duration-500 rounded-2xl"
+                    className="w-full h-full object-contain bg-slate-950 animate-in fade-in duration-500 rounded-2xl"
                   />
                 )}
 
@@ -66,7 +66,7 @@ export default function SmartHomeSection() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover animate-in fade-in duration-500 rounded-2xl"
+                    className="w-full h-full object-contain bg-slate-950 animate-in fade-in duration-500 rounded-2xl"
                   />
                 )}
 
@@ -84,25 +84,25 @@ export default function SmartHomeSection() {
               </div>
 
               {/* Hardware Caption */}
-              <div className="mt-4 flex items-center justify-between pt-4 border-t border-slate-100 text-xs">
-                <span className="font-bold text-[#0E284A] uppercase tracking-wider">
+              <div className="mt-3 flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+                <span className="font-bold text-[#0E284A] uppercase tracking-wider truncate pr-2">
                   {activeTab === "routines" && t.smartHome.captions.routines}
                   {activeTab === "panel" && t.smartHome.captions.panel}
                   {activeTab === "intercom" && t.smartHome.captions.intercom}
                   {activeTab === "sensors" && t.smartHome.captions.sensors}
                 </span>
-                <span className="text-[#64748B]">{t.smartHome.captions.series}</span>
+                <span className="text-[#64748B] shrink-0">{t.smartHome.captions.series}</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Feature Navigation Cards */}
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-7 space-y-4.5">
             
             {/* Tab 1: Smart Routines */}
             <div
               onClick={() => setActiveTab("routines")}
-              className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+              className={`p-6 md:py-6.5 rounded-2xl cursor-pointer transition-all duration-300 border ${
                 activeTab === "routines"
                   ? "bg-white shadow-md border-[#3A7D44] ring-1 ring-[#3A7D44]"
                   : "bg-white/60 hover:bg-white border-slate-200 shadow-sm"
@@ -126,7 +126,7 @@ export default function SmartHomeSection() {
             {/* Tab 2: Smart Panel */}
             <div
               onClick={() => setActiveTab("panel")}
-              className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+              className={`p-6 md:py-6.5 rounded-2xl cursor-pointer transition-all duration-300 border ${
                 activeTab === "panel"
                   ? "bg-white shadow-md border-[#3A7D44] ring-1 ring-[#3A7D44]"
                   : "bg-white/60 hover:bg-white border-slate-200 shadow-sm"
@@ -150,7 +150,7 @@ export default function SmartHomeSection() {
             {/* Tab 3: Video Intercom */}
             <div
               onClick={() => setActiveTab("intercom")}
-              className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+              className={`p-6 md:py-6.5 rounded-2xl cursor-pointer transition-all duration-300 border ${
                 activeTab === "intercom"
                   ? "bg-white shadow-md border-[#3A7D44] ring-1 ring-[#3A7D44]"
                   : "bg-white/60 hover:bg-white border-slate-200 shadow-sm"
@@ -174,7 +174,7 @@ export default function SmartHomeSection() {
             {/* Tab 4: Leakage Sensors */}
             <div
               onClick={() => setActiveTab("sensors")}
-              className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+              className={`p-6 md:py-6.5 rounded-2xl cursor-pointer transition-all duration-300 border ${
                 activeTab === "sensors"
                   ? "bg-white shadow-md border-[#3A7D44] ring-1 ring-[#3A7D44]"
                   : "bg-white/60 hover:bg-white border-slate-200 shadow-sm"
