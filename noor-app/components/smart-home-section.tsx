@@ -42,7 +42,7 @@ export default function SmartHomeSection() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-contain bg-slate-950 animate-in fade-in duration-500 rounded-2xl"
+                    className="w-full h-full object-cover animate-in fade-in duration-500 rounded-2xl"
                   />
                 )}
 
@@ -66,7 +66,7 @@ export default function SmartHomeSection() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-contain bg-slate-950 animate-in fade-in duration-500 rounded-2xl"
+                    className="w-full h-full object-cover animate-in fade-in duration-500 rounded-2xl"
                   />
                 )}
 
@@ -97,7 +97,7 @@ export default function SmartHomeSection() {
           </div>
 
           {/* Right Column: Feature Navigation Cards */}
-          <div className="lg:col-span-7 space-y-4.5">
+          <div className="lg:col-span-7 space-y-5 md:space-y-6">
             
             {/* Tab 1: Smart Routines */}
             <div

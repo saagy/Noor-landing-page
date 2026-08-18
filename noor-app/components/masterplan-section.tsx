@@ -8,7 +8,6 @@ import {
   ArrowUpRight,
   Building2,
   Trees,
-  ShieldCheck,
   ShoppingBag,
   Sparkles,
 } from "lucide-react";
@@ -19,7 +18,6 @@ const masterplanHotspotConfigs = [
   { id: "park", key: "park" as const, icon: Trees, top: "30%", left: "58%" },
   { id: "club", key: "club" as const, icon: Sparkles, top: "65%", left: "52%" },
   { id: "commercial", key: "commercial" as const, icon: ShoppingBag, top: "76%", left: "61%" },
-  { id: "command", key: "command" as const, icon: ShieldCheck, top: "22%", left: "25%" },
 ];
 
 const unitBrochureConfigs = [
